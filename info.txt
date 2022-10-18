@@ -1,0 +1,2 @@
+root@8592e8087d09:/home/site/wwwroot# ls node_modules/.bin/next -lrta
+lrwxrwxrwx 1 1005 1005 21 Oct 17 22:46 node_modules/.bin/next -> ../next/dist/bin/next
