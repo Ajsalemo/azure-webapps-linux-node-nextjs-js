@@ -54,7 +54,7 @@ jobs:
           name: node-app
 
       - name: Change tar to zip
-        run: tar -h -xzf next.tar.gz && zip next.zip $(tar tf next.tar.gz)
+        run: tar -h --overwrite -xvf next.tar.gz && zip next.zip $(tar tf next.tar.gz)
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
