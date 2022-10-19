@@ -49,6 +49,19 @@ jobs:
         with:
           name: node-app
 
+      - name: Add post build command
+        uses: Azure/appservice-settings@v1
+        with:
+          app-name: 'ansalemo-nextjs-test-again'
+          app-settings-json: |
+            [
+                {
+                    "name": "POST_BUILD_COMMAND",
+                    "value": "npm rebuild",
+                    "slotSetting": false
+                }
+            ]
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
