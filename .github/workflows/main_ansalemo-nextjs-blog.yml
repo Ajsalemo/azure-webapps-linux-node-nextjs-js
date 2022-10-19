@@ -28,7 +28,7 @@ jobs:
 
       - name: Zip all files for upload between jobs
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: zip --symlinks -qr next.zip ./* 
+        run: zip --symlinks -qr next.zip ./* .next 
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
