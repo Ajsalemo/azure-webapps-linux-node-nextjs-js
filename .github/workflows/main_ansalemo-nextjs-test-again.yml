@@ -28,7 +28,7 @@ jobs:
 
       - name: Zip all files for upload between jobs
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: tar cvf next.zip ./* .next
+        run: zip --symlinks -qr next.zip ./* .next 
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -55,7 +55,7 @@ jobs:
         with:
           app-name: 'ansalemo-nextjs-test-again'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_43CCC58D0A6A4FD699BB7C96A64B2CA0 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A24570A9F22447939175A6676600FE20 }}
           package: next.zip
 
       - name: Delete zip file
