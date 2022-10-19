@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - ansalemo-nextjs-test-again
+name: Build and deploy Node.js app to Azure Web App - ansalemo-nextjs-blog
 
 on:
   push:
@@ -53,9 +53,9 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ansalemo-nextjs-test-again'
+          app-name: 'ansalemo-nextjs-blog'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A24570A9F22447939175A6676600FE20 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_43CCC58D0A6A4FD699BB7C96A64B2CA0 }}
           package: next.zip
 
       - name: Delete zip file
