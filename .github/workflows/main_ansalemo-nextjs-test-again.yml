@@ -21,20 +21,17 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: npm install, build
+      - name: npm install, build, and test
         run: |
           npm install
           npm run build --if-present
-
-      - name: Zip all files for upload between jobs
-        # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: tar cvf next.tar ./* 
+          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: next.tar
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,8 +52,5 @@ jobs:
         with:
           app-name: 'ansalemo-nextjs-test-again'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A24570A9F22447939175A6676600FE20 }}
-          package: next.tar
-
-      - name: Delete zip file
-        run: rm next.tar
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_43CCC58D0A6A4FD699BB7C96A64B2CA0 }}
+          package: .
