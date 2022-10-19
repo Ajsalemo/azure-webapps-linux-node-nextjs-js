@@ -45,11 +45,11 @@ stages:
       inputs:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
         includeRootFolder: false
-        archiveType: tar
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar
+    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
 
 - stage: Deploy
@@ -72,4 +72,4 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).tar
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
