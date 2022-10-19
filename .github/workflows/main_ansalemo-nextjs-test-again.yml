@@ -32,7 +32,7 @@ jobs:
 
       - name: Zip all files for upload between jobs
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: tar -cvf next.tar.gz ./* .next
+        run: tar -czf next.tar.gz ./* .next
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
