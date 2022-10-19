@@ -1,2 +1,31 @@
 root@8592e8087d09:/home/site/wwwroot# ls node_modules/.bin/next -lrta
 lrwxrwxrwx 1 1005 1005 21 Oct 17 22:46 node_modules/.bin/next -> ../next/dist/bin/next
+
+2022-10-19T22:30:49.226191935Z npm info it worked if it ends with ok
+2022-10-19T22:30:49.243312691Z npm info using npm@6.14.15
+2022-10-19T22:30:49.243349991Z npm info using node@v18.2.0
+2022-10-19T22:30:56.096019071Z npm info readInstalled object
+2022-10-19T22:30:56.347928964Z npm info build /home/site/wwwroot/node_modules/next
+2022-10-19T22:30:56.374654548Z npm info lifecycle next@12.3.1~preinstall: next@12.3.1
+2022-10-19T22:30:56.377377657Z npm info linkStuff next@12.3.1
+2022-10-19T22:30:56.421675396Z npm ERR! code EPERM
+2022-10-19T22:30:56.422852100Z npm ERR! syscall lchown
+2022-10-19T22:30:56.424144704Z npm ERR! path /home/site/wwwroot/node_modules/.bin/next
+2022-10-19T22:30:56.451805391Z npm ERR! errno -1
+2022-10-19T22:30:56.451852991Z npm ERR! Error: EPERM: operation not permitted, lchown '/home/site/wwwroot/node_modules/.bin/next'
+2022-10-19T22:30:56.451859891Z npm ERR!  [OperationalError: EPERM: operation not permitted, lchown '/home/site/wwwroot/node_modules/.bin/next'] {
+2022-10-19T22:30:56.451863591Z npm ERR!   cause: [Error: EPERM: operation not permitted, lchown '/home/site/wwwroot/node_modules/.bin/next'] {
+2022-10-19T22:30:56.451867091Z npm ERR!     errno: -1,
+2022-10-19T22:30:56.451870291Z npm ERR!     code: 'EPERM',
+2022-10-19T22:30:56.451873491Z npm ERR!     syscall: 'lchown',
+2022-10-19T22:30:56.451876891Z npm ERR!     path: '/home/site/wwwroot/node_modules/.bin/next'
+2022-10-19T22:30:56.451880091Z npm ERR!   },
+2022-10-19T22:30:56.451883391Z npm ERR!   isOperational: true,
+2022-10-19T22:30:56.451886591Z npm ERR!   errno: -1,
+2022-10-19T22:30:56.451889791Z npm ERR!   code: 'EPERM',
+2022-10-19T22:30:56.451892891Z npm ERR!   syscall: 'lchown',
+2022-10-19T22:30:56.451896191Z npm ERR!   path: '/home/site/wwwroot/node_modules/.bin/next'
+2022-10-19T22:30:56.451899391Z npm ERR! }
+2022-10-19T22:30:56.451902691Z npm ERR!
+2022-10-19T22:30:56.451912291Z npm ERR! The operation was rejected by your operating system.
+2022-10-19T22:30:56.451916291Z npm ERR! It is likely you do not have the permissions to access this file as the current user
