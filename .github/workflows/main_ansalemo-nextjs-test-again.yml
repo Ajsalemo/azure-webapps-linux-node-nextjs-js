@@ -28,7 +28,7 @@ jobs:
 
       - name: Zip all files for upload between jobs
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: zip --symlinks -qr next.zip ./* .next
+        run: zip -qr next.zip ./* .next
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,14 +53,6 @@ jobs:
         uses: Azure/appservice-settings@v1
         with:
           app-name: 'ansalemo-nextjs-test-again'
-          app-settings-json: |
-            [
-                {
-                    "name": "POST_BUILD_COMMAND",
-                    "value": "npm rebuild",
-                    "slotSetting": false
-                }
-            ]
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
