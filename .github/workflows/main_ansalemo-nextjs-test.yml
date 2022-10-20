@@ -51,7 +51,7 @@ jobs:
 
       - name: Unzip files
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: unzip -q next.zip /next
+        run: unzip -q next.zip -d /next
 
       - name: Check for symlinks on files
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
