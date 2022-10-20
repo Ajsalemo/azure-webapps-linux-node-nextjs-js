@@ -31,15 +31,15 @@ jobs:
         run: ls -lrta ./node_modules/.bin
 
 
-      - name: Zip all files for upload between jobs
+      - name: Tar all files for upload between jobs
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: zip -qr next.zip ./* .next
+        run: tar -cvf next.tar ./* .next
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: next.zip
+          path: next.tar
 
   deploy:
     runs-on: ubuntu-latest
@@ -54,9 +54,9 @@ jobs:
         with:
           name: node-app
 
-      - name: Unzip files
+      - name: Extract Tar file
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
-        run: unzip -q next.zip 
+        run: tar -h -zxf next.tar 
 
       - name: Check for symlinks on files
         # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
