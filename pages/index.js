@@ -17,8 +17,11 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          NEXT_PUBLIC_API_URI: {process.env.NEXT_PUBLIC_API_URI ?? "No environment variables exposed to the browser"}
+        </p>
+        
+        <p className={styles.description}>
+          API_URI: {process.env.API_URI ?? "No environment variables exposed to the browser"}
         </p>
 
         <div className={styles.grid}>

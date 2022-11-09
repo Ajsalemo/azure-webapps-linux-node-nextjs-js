@@ -3,6 +3,9 @@
 
 name: Build and deploy Node.js app to Azure Web App - ansalemo-nextjs-test
 
+env:
+  NEXT_PUBLIC_API_URI: ${{ secrets.NEXT_PUBLIC_API_URI }}
+
 on:
   push:
     branches:
@@ -71,7 +74,7 @@ jobs:
         with:
           app-name: 'ansalemo-nextjs-test'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_TEST1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_APP_SERVICE }}
           package: next.zip
 
       - name: Delete zip file
