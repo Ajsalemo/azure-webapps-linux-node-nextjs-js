@@ -5,6 +5,7 @@ name: Build and deploy Node.js app to Azure Web App - ansalemo-nextjs-test
 
 env:
   NEXT_PUBLIC_API_URI: ${{ secrets.NEXT_PUBLIC_API_URI }}
+  API_URI: ${{ secrets.API_URI }}
 
 on:
   push:
