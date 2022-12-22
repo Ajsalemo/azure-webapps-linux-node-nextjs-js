@@ -73,7 +73,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ansalemo-nextjs-symlinks'
+          app-name: 'ansalemo-node-symlinks'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_APP_SERVICE }}
           package: next.zip
