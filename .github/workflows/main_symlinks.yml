@@ -63,7 +63,6 @@ jobs:
         with:
           app-name: 'ansalemo-nextjs-test'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_APP_SERVICE }}
           package: next.zip
 
       - name: Delete zip file
@@ -72,3 +71,4 @@ jobs:
       - name: logout
         run: |
           az logout
+
