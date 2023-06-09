@@ -16,14 +16,6 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <p className={styles.description}>
-          NEXT_PUBLIC_API_URI: {process.env.NEXT_PUBLIC_API_URI ?? "No environment variables exposed to the browser"}
-        </p>
-        
-        <p className={styles.description}>
-          API_URI: {process.env.API_URI ?? "No environment variables exposed to the browser"}
-        </p>
-
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
